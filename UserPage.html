@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>User</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Chau Vu" />
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link href="ProfilePage.css" rel="stylesheet">
+
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script type="text/javascript" src="jquery.js"></script>
+
+	</head>
+
+	<body>
+		<div id="HomeWrapper">
+
+		<header class="container-fluid" style="background-image: url('topImg.png'); background-size: 100% 100%; background-repeat: no-repeat; height:100px;">
+				<div class="row-fluid">
+				<h2 class="span6"></h2>
+				<div class = "span6" style="display:inline; text-align: right; padding: 20px;">
+					<a href="#pane2" style="font-size: 18px;">Hello, Username! </a>&nbsp; &nbsp;
+					<a href="HomePage3.html" style="font-size: 18px;"> Logout </a> <br>
+					
+				</div>
+				</div>
+		</header>
+		<div><script language="javascript"> var today = new Date(); document.write(today); </script></div>
+		<ul class="nav nav-tabs" id="myTab">
+		  <li class="active"><a href="#pane1">My Gallery</a></li>
+		  <li><a href="#pane2">Profile</a></li>
+		  <li><a href="#pane3">Pinboard</a></li>
+		  <li><a href="#pane4">Review</a></li>
+		</ul>
+		 
+		<div class="tab-content">
+		  <div class="tab-pane active" id="pane1">
+						  					<!--  Carousel - consult the Twitter Bootstrap docs at
+						      http://twitter.github.com/bootstrap/javascript.html#carousel -->
+						<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
+						  <div class="carousel-inner">
+						    <div class="item active"><!-- class of active since it's the first item -->
+						      <img src="place.jpg" style="width: 958px; height: 480px;" alt="" />
+						      <div class="carousel-caption">
+						        <p>Caption text here</p>
+						      </div>
+						    </div>
+						 
+						    <div class="item">
+						      <img src="place.jpg" style="width: 958px; height: 480px;" alt="" />
+						      <div class="carousel-caption">
+						        <p>Caption text here</p>
+						      </div>
+						    </div>
+						
+						    <div class="item">
+						      <img src="place.jpg" style="width: 958px; height: 480px;" alt="" />
+						      <div class="carousel-caption">
+						        <p>Caption text here</p>
+						      </div>
+						    </div>
+					
+						    <div class="item">
+						      <img src="place.jpg" style="width: 958px; height: 480px;" alt="" />
+						      <div class="carousel-caption">
+						        <p>Caption text here</p>
+						      </div>
+						    </div>
+						  </div><!-- /.carousel-inner -->
+						  <!--  Next and Previous controls below
+						        href values must reference the id for this carousel -->
+						    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+						    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+						</div><!-- /.carousel -->
+		  </div>
+		  <div class="tab-pane" id="pane2">Code Profile...</div>
+		  <div class="tab-pane" id="pane3">Code Pinboard...<br>
+		  	<div id="containerList">
+		  		<ul id="theList" contenteditable>
+		  			<p>To do List :)</p>
+		  		</ul>
+		  		<p> <a href=javascript.void(); id="saveAll">Save</a>
+		  			<a href=javascript.void(); id="clearAll">Clear All</a>
+		  		</p>
+		  	</div>
+		  	
+		  	
+		  	
+		  	
+		  	
+		  </div>
+		  <div class="tab-pane" id="pane4">Search, Review...<br>
+		  	<form style="display:inline;">
+		  		<input type="search" id="searchField" placeholder="Enter keyword(s)" />
+		  		<input type="submit" class="btn btn-big btn-primary" name="search" id="search" value="Search!">
+		  	</form>	
+		  	
+		  </div>
+		</div>
+		 
+		<script>
+		  $(function () {
+		    $('#myTab a:first').tab('show');
+		  })
+		</script>
+
+
+		<footer>
+		</footer>
+		</div>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript"> $('#myTab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})</script>
+		<script>  $(document).ready(function(){    $('.carousel').carousel({interval: 2000;});  });</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var theList = document.getElementById('theList');
+			$('#saveAll').click(function(e){
+				e.preventDefault();
+				localStorage.setItem('todoList', theList.innerHTML);
+			});
+			$('#clearAll').click(function(e){
+				e.preventDefault();
+				localStorage.clear();
+				location.reload();
+			});
+			
+			loadToDo();
+			
+			function loadToDo(){
+				if (localStorage.getItem('todoList')) {
+					theList.innerHTML = localStorage.getItem('todoList');
+				}
+			}
+		});
+	</script>
+	</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>JellyFish</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Chau Vu" />
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link href="HomePage3.css" rel="stylesheet">
+		
+
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script type="text/javascript" src="jquery.js"></script>
+
+  <style type="text/css">
+  #popupbox{
+  /*margin: 0; 
+  margin-left: 10%; 
+  margin-right: 40%;
+  margin-top: 50px; */
+ top:150px;
+ right: 200px;
+  padding: 10px; 
+  width: 180px; 
+  height: 180px; 
+  position: fixed; 
+  background: #FBFBF0; 
+  border: solid gray 1px; 
+  z-index: 9; 
+  font-family: arial; 
+  visibility: hidden; 
+  }
+  
+  #popupboxR{
+  margin: 0; 
+  margin-left: 10%; 
+  margin-right: 40%;
+  margin-top: 50px; 
+  padding: 10px; 
+  width: 180px; 
+  height: 180px; 
+  position: absolute; 
+  background: #FBFBF0; 
+  border: solid gray 1px; 
+  z-index: 9; 
+  font-family: arial; 
+  visibility: hidden; 
+  }
+  
+</style>
+	</head>
+
+	<body>
+		<div id="HomeWrapper">
+
+<!--<img src="headerImg.jpg" style = "max-width: 100%" /> -->
+
+			<header class="container-fluid" style="background-image: url('topImg.png'); background-size: 100% 100%; background-repeat: no-repeat; height:100px;">
+				<div class="row-fluid">
+				<h2 class="span6"></h2>
+				<div class = "span6" style="display:inline; text-align: right; padding: 20px;">
+					<div id="popupbox" style="border: 1px solid gray"> 
+					      <form class="form-signin" name="signin">
+					        <h4 class="form-signin-heading"><center>Welcome back!</center></h4>
+					        <input type="text" class="input-block-level" id="username" placeholder="Email address">
+					        <input type="password" class="input-block-level" placeholder="Password"><br>
+					        <label class="checkbox">
+					          <input type="checkbox" value="remember-me" onclick ="validator()"> Remember me
+					        </label>
+					        <button class="btn btn-small btn-primary" type="submit" id="button">Sign in</button>
+					      </form>
+					<br />
+					<center><a href="javascript:login('hide');"><b>Close</b></a></center> 
+					</div> 
+					<a href="javascript:login('show');" style="font-size: 18px;">Login </a>&nbsp;&nbsp;
+
+<!--REGISTER-------------->
+					<div id="popupboxR" style="border: 1px solid gray; padding: 10px;"> 
+					      <form class="form-signin" name="signin">
+					        <h4 class="form-signin-heading"><center>Please register!</center></h4>
+					        <input type="text" class="input-block-level" placeholder="Email address">
+					        <input type="password" class="input-block-level" placeholder="Password"><br>
+					        <label class="checkbox">
+					          <input type="checkbox" value="remember-me" onclick ="validator()"> Remember me
+					        </label>
+					        <button class="btn btn-small btn-primary" type="submit" id="button">Register</button>
+					      </form>
+					<br />
+					<center><a href="javascript:register('hide');"><b>Close</b></a></center> 
+					</div> 
+					<a href="javascript:register('show');" style="font-size: 18px;">Register</a>
+					</div>
+				</div>
+			</header>
+
+			<div class="container-fluid" id="main" style="background-image:url('bodyImg.jpg'); background-size: 100% 100%;background-repeat: no-repeat; ">
+				<nav class="row-fluid">
+				<div class="span3" ></div>
+				<div class="span3" style=" text-align: right;margin-top: 27%; "><a href="" style="font-size: 20px; "> Search </a></div>
+				<!--<div class="span3" style=" padding-left: 2%;margin-top: 27%;"><a href="" style="font-size: 20px;">???</a></div> -->
+				<div class="span3" ></div>
+				<div class="span3" ></div>
+				</nav>
+<!--<img src="bodyImg.jpg" alt="body" usemap="#boat" style="background-size: 100% 100%;" />
+				<map name="boat">
+					<area shape="rect" coords="350, 200, 450, 300" alt="Destinations" href="Travel.html"/>
+				</map>
+				<h2>JellyFish<br>Logo<br>JellyFish<br>Logo<br>JellyFish<br>Logo<br>JellyFish<br>Logo<br></h2><br>-->
+
+			</div>
+
+			<footer class="container-fluid">
+				<div class = "row-fluid">
+				<div class="span6"><h4>What is PBJF</h4>
+				
+				Ball tip corned beef shoulder, meatloaf laboris beef .<br>
+				Bacon ipsum dolor sit amet pork belly tail turkey. 
+
+				</div >
+				<div class="span6"> <h4>About the team</h4>
+				
+
+Bacon ipsum dolor sit amet pork belly tail turkey. <br>
+Ball tip corned beef shoulder, meatloaf laboris. 
+				</div>
+				</div>
+			</footer>
+		</div>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		  <script language="JavaScript" type="text/javascript">
+  function login(showhide){
+    if(showhide == "show"){
+        document.getElementById('popupbox').style.visibility="visible";
+    }else if(showhide == "hide"){
+        document.getElementById('popupbox').style.visibility="hidden"; 
+    }
+  }
+
+  function register(showhide){
+    if(showhide == "show"){
+        document.getElementById('popupboxR').style.visibility="visible";
+    }else if(showhide == "hide"){
+        document.getElementById('popupboxR').style.visibility="hidden"; 
+    }
+  }
+  
+  </script>
+	</body>
+</html>
